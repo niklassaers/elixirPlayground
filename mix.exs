@@ -2,7 +2,7 @@ defmodule TCPClient.Mixfile do
   use Mix.Project
 
   def project do
-    [ app: :nntpclient,
+    [ app: :elixirPlayground,
       version: "0.0.1",
       elixir: "~> 0.11.1",
       deps: deps ]
@@ -10,7 +10,7 @@ defmodule TCPClient.Mixfile do
 
   # Configuration for the OTP application
   def application do
-    []
+    [applications: [:socket, :riakc]]
   end
 
   # Returns the list of dependencies in the format:

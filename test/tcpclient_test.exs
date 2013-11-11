@@ -7,7 +7,7 @@ defmodule TCPClientTest do
 
   test "tcp test" do
     sock = Socket.TCP.connect! "localhost", 22, packet: :line
-	[SSHVer, OpenSSHVer] = Regex.run %r"SSH-(.*?)-OpenSSH_(.*?)$", sock |> Socket.Stream.recv!
-	IO.puts "Found a server version #{OpenSSHVer} speaking SSH v#{SSHVer}"
+	[_, sshVer, openSSHVer] = Regex.run %r"SSH-(.*?)-OpenSSH_(.*?)\r$", sock |> Socket.Stream.recv!
+	IO.puts "Found a server version #{openSSHVer} speaking SSH v#{sshVer}"
   end
 end
