@@ -1,3 +1,3 @@
-# Nntpclient
+# Elixir Playground
 
-** TODO: Add description **
+Where I work on learning Elixir and interesting projects surrounding it
